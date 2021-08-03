@@ -12,3 +12,5 @@ type movies struct {
 type MovieService struct {
 	Validator *validator.Validate
 }
+
+var datastore = map[string]movies{}

@@ -1,6 +1,8 @@
 package service
 
 import (
+	"fmt"
+	"go/format"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -27,4 +29,10 @@ func (s *MovieService) AddMovie(c *gin.Context){
 		})
 		return
 	}
+
+	fmt.Println(m)
+	datastore[m.Name] = m
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "Movie added.",
+	})
 }
