@@ -2,30 +2,29 @@ package service
 
 import (
 	"fmt"
-	"go/format"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func (s *MovieService) AddMovie(c *gin.Context){
+func (s *MovieService) AddMovie(c *gin.Context) {
 
 	var m movies
 	err := c.ShouldBind(&m)
 
-	if err != nil{
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": "invalid response",
-			"err": err.Error(),
+			"err":     err.Error(),
 		})
 		return
 	}
 
 	s.Validator.Struct(m)
-	if err != nil{
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": "A required field is missing or outside of the accepted parameters",
-			"err": err.Error(),
+			"err":     err.Error(),
 		})
 		return
 	}

@@ -1,9 +1,16 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
+	"github.com/robot297/movie-api-go/service"
+)
 
-func main()  {
+func main() {
+	svc := service.MovieService{
+		Validator: validator.New(),
+	}
 	router := gin.Default()
-	router.POST("/movie")
+	router.POST("/movie", svc.AddMovie)
 	router.Run()
 }
