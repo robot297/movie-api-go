@@ -13,5 +13,8 @@ func main() {
 	router := gin.Default()
 	router.POST("/movie", svc.AddMovie)
 	router.GET("/movie", svc.GetMovies)
+	router.GET("/movie/:name", svc.GetMovie)
+	router.PUT("/movie/:name", svc.UpdateMovie)
+	router.DELETE("/movie/:name", svc.DeleteMovie)
 	router.Run()
 }

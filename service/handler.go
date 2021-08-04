@@ -47,7 +47,41 @@ func (s *MovieService) GetMovies(c *gin.Context) {
 }
 
 // Read / Get an individual movie
+func (s *MovieService) GetMovie(c *gin.Context) {
+	c.JSON(http.StatusOK, datastore[c.Param("name")])
+}
 
 // Update / Put
+func (s *MovieService) UpdateMovie(c *gin.Context) {
+	if val, ok := datastore[c.Param("name")]; ok {
+		err := c.ShouldBind(&val)
+	
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"message": "invalid response",
+				"err":     err.Error(),
+			})
+			return
+		}
+		datastore[c.Param("name")] = val
+		c.JSON(http.StatusOK, datastore[c.Param("name")])
+		return
+	}
+	c.JSON(http.StatusNotFound,gin.H{
+		"message": "Unable to find requested movie.",
+	})
+}
 
 // Delete / Delete
+func (s *MovieService) DeleteMovie(c *gin.Context) {
+	if _, ok := datastore[c.Param("name")]; ok {
+		delete(datastore, c.Param("name"))
+		c.JSON(http.StatusAccepted, gin.H{
+			"message": "Movie deleted.",
+		})
+		return
+	}
+	c.JSON(http.StatusNotFound,gin.H{
+		"message": "Unable to find requested movie.",
+	})
+}
