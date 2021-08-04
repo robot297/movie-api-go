@@ -12,5 +12,6 @@ func main() {
 	}
 	router := gin.Default()
 	router.POST("/movie", svc.AddMovie)
+	router.GET("/movie", svc.GetMovies)
 	router.Run()
 }

@@ -35,3 +35,11 @@ func (s *MovieService) AddMovie(c *gin.Context) {
 		"message": "Movie added.",
 	})
 }
+
+func (s *MovieService) GetMovies(c *gin.Context) {
+	var movies []movies
+	for _, v := range datastore {
+		movies = append(movies, v)
+	}
+	c.JSON(http.StatusOK, movies)
+}
