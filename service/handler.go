@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Create / Post
 func (s *MovieService) AddMovie(c *gin.Context) {
 
 	var m movies
@@ -36,6 +37,7 @@ func (s *MovieService) AddMovie(c *gin.Context) {
 	})
 }
 
+// Read / Get all movies
 func (s *MovieService) GetMovies(c *gin.Context) {
 	var movies []movies
 	for _, v := range datastore {
@@ -43,3 +45,9 @@ func (s *MovieService) GetMovies(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, movies)
 }
+
+// Read / Get an individual movie
+
+// Update / Put
+
+// Delete / Delete
