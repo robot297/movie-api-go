@@ -20,7 +20,7 @@ func (s *MovieService) AddMovie(c *gin.Context) {
 		return
 	}
 
-	s.Validator.Struct(m)
+	err = s.Validator.Struct(m)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": "A required field is missing or outside of the accepted parameters",
