@@ -16,5 +16,6 @@ func main() {
 	router.GET("/movie/:name", svc.GetMovie)
 	router.PUT("/movie/:name", svc.UpdateMovie)
 	router.DELETE("/movie/:name", svc.DeleteMovie)
+	router.DELETE("/reset", svc.ResetData)
 	router.Run()
 }

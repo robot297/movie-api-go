@@ -13,4 +13,19 @@ type MovieService struct {
 	Validator *validator.Validate
 }
 
-var datastore = map[string]movies{}
+var datastore = defaultData
+
+var defaultData = map[string]movies{
+	"Space Jam": {
+		Name:    "Space Jam",
+		Ratings: 5,
+		Actors:  []string{"Michael Jordan", "Bugs Bunny"},
+		Watched: true,
+	},
+	"Scarface": {
+		Name:    "Scarface",
+		Ratings: 5,
+		Actors:  []string{"Al Pacino"},
+		Watched: true,
+	},
+}
