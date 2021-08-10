@@ -55,7 +55,7 @@ func (s *MovieService) GetMovie(c *gin.Context) {
 func (s *MovieService) UpdateMovie(c *gin.Context) {
 	if val, ok := datastore[c.Param("name")]; ok {
 		err := c.ShouldBind(&val)
-	
+
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"message": "invalid response",
@@ -67,7 +67,7 @@ func (s *MovieService) UpdateMovie(c *gin.Context) {
 		c.JSON(http.StatusOK, datastore[c.Param("name")])
 		return
 	}
-	c.JSON(http.StatusNotFound,gin.H{
+	c.JSON(http.StatusNotFound, gin.H{
 		"message": "Unable to find requested movie.",
 	})
 }
@@ -81,7 +81,28 @@ func (s *MovieService) DeleteMovie(c *gin.Context) {
 		})
 		return
 	}
-	c.JSON(http.StatusNotFound,gin.H{
+	c.JSON(http.StatusNotFound, gin.H{
 		"message": "Unable to find requested movie.",
+	})
+}
+
+// Reset datastore
+func (s *MovieService) ResetData(c *gin.Context) {
+	datastore = map[string]movies{
+		"Space Jam": {
+			Name:    "Space Jam",
+			Ratings: 5,
+			Actors:  []string{"Michael Jordan", "Bugs Bunny"},
+			Watched: true,
+		},
+		"Scarface": {
+			Name:    "Scarface",
+			Ratings: 5,
+			Actors:  []string{"Al Pacino"},
+			Watched: true,
+		},
+	}
+	c.JSON(http.StatusAccepted, gin.H{
+		"message": "Data reset.",
 	})
 }
