@@ -61,14 +61,13 @@ Paste the response message & response code in the Teams chat.​
 
 Returns information for all movies.
 
-==== Get one account ====
-{| class="wikitable"
-|-
-|'''GET'''
-| /simplebank/v1/accounts/<code>{id}</code>
-|}
+#### Get One Account
 
-Returns information for one account.
+| Web Method | End Point |
+| ------- | ------ |
+| **GET** | /movie/`{movie_name}` |
+
+Returns information for one movie.
 
 ==== Create an account ====
 {| class="wikitable"
@@ -149,7 +148,7 @@ Withdraws money from an account.
 
 Reset data back to default.
 
-```
+```json
 {
 	"info": {
 		"_postman_id": "17ed9561-caf3-4e8c-9372-9636ad4d4a3a",
