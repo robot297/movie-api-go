@@ -36,7 +36,7 @@ Use the provided API endpoint to create a movie entry. ​Use your name for the 
 
 ### Base URL
 
-[https://summit-movie-api.herokuapp.com/movie](https://summit-movie-api.herokuapp.com/movie)
+[https://summit-movie-api.herokuapp.com](https://summit-movie-api.herokuapp.com)
 
 ### Movies API
 
