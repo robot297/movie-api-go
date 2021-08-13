@@ -63,7 +63,7 @@ Creates an entry for a movie.
 
 **Example below:**
 
-```
+```json
 {
 	"name": "Test",
 	"ratings": 1,
@@ -80,15 +80,15 @@ Deletes a movie entry where 'name' is the name of the specific movie title.
 
 **Example below:**
 
-```
+```json
 {
 	"name": "Test"
 }
 ```
 
-
 ### Reset
 ####  Reset data back to default
+
 | Web Method | End Point |
 | ------- | ------ |
 | **DELETE** | /reset |
