@@ -1,37 +1,96 @@
-## Welcome to GitHub Pages
+# Welcome to Summit API Day
 
-You can use the [editor on GitHub](https://github.com/robot297/movie-api-go/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Here you will find all information to get started with building and deploying your web service on heroku.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Pre-Requisites
 
-### Markdown
+* Postman installed on your workstation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Lab Docs
 
-```markdown
-Syntax highlighted code block
+### Lab 1
 
-# Header 1
-## Header 2
-### Header 3
+Use the provided API endpoint to create a movie entry. ​Use your name for the 'Name' criteria.
 
-- Bulleted
-- List
+**Hint:** *Utilize the movies API documentation below.*
 
-1. Numbered
-2. List
+### Lab 2
 
-**Bold** and _Italic_ and `Code` text
+* Use the provided API endpoint to ensure your movie shows up in the movie catalog.
 
-[Link](url) and ![Image](src)
+**Hint:** *Utilize the movies API documentation below.*
+
+### Lab 3
+
+* Using the data from Lab 1, update your entry and change the movie name to <Name_API_Day>. Once done, again, ensure your movie shows up in the movie catalog.
+
+**Hint:** *Utilize the movies API documentation below.*
+
+### Lab 4
+
+* Nice work! Turns out the movie you added isn't an actual movie! Use the provided API endpoint to *delete* your movie!
+
+**Hint:** *Utilize the movies API documentation below.*
+
+## API Endpoints
+
+### Base URL
+
+[https://summit-movie-api.herokuapp.com](https://summit-movie-api.herokuapp.com)
+
+### Movies API
+
+#### Get All Movies
+
+| Web Method | End Point |
+| ------- | ------ |
+| **GET** | /movie |
+
+Returns information for *all* movies.
+
+
+| Web Method | End Point |
+| ------- | ------ |
+| **GET** | /movie/<name> |
+
+Returns information for *one* movie where 'name' is the name of the specific movie title.
+
+| Web Method | End Point |
+| ------- | ------ |
+| **POST** | /movie |
+
+Creates an entry for a movie.
+
+**Example below:**
+
+```json
+{
+	"name": "Test",
+	"ratings": 1,
+	"actors": ["Logan Price", "John Sibo", "Obot"],
+	"watched": false
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+| Web Method | End Point |
+| ------- | ------ |
+| **DELETE** | /movie/<name> |
 
-### Jekyll Themes
+Deletes a movie entry where 'name' is the name of the specific movie title.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/robot297/movie-api-go/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Example below:**
 
-### Support or Contact
+```json
+{
+	"name": "Test"
+}
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Reset
+####  Reset data back to default
+
+| Web Method | End Point |
+| ------- | ------ |
+| **DELETE** | /reset |
+
+Reset data back to default data.
