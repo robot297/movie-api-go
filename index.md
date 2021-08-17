@@ -2,9 +2,13 @@
 
 Here you will find all information to get started with building and deploying your web service on heroku.
 
+---
+
 ## Pre-Requisites
 
 * Postman installed on your workstation
+
+---
 
 ## Lab Docs
 
@@ -32,6 +36,8 @@ Use the provided API endpoint to create a movie entry. ​Use your name for the 
 
 **Hint:** *Utilize the movies API documentation below.*
 
+---
+
 ## API Endpoints
 
 ### Base URL
@@ -51,7 +57,7 @@ Returns information for *all* movies.
 
 | Web Method | End Point |
 | ------- | ------ |
-| **GET** | /movie/<name> |
+| **GET** | /movie/:name |
 
 Returns information for *one* movie where 'name' is the name of the specific movie title.
 
@@ -74,7 +80,7 @@ Creates an entry for a movie.
 
 | Web Method | End Point |
 | ------- | ------ |
-| **DELETE** | /movie/<name> |
+| **DELETE** | /movie/:name |
 
 Deletes a movie entry where 'name' is the name of the specific movie title.
 
