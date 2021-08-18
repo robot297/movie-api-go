@@ -16,25 +16,25 @@ Here you will find all information to get started with building and deploying yo
 
 Use the provided API endpoint to create a movie entry. ​Use your name for the 'name' criteria in the body.
 
-**Hint:** *Utilize the movies API documentation below.*
+**Hint:** *Think about which HTTP Method would be required to create a movie and utilize that endpoint & method below.*
 
 ### Lab 2
 
 * Use the provided API endpoint to ensure your movie shows up in the movie catalog.
 
-**Hint:** *Utilize the GET /movie/:name API documentation below.*
+**Hint:** *Think about which HTTP Method you would use to get information and find the respective endpoint to get **one** movie.*
 
 ### Lab 3
 
 * Using the data from Lab 1, update your entry and change the movie name to <Name_API_Day>. Once done, again, ensure your movie shows up in the movie catalog.
 
-**Hint:** *Utilize the movies API documentation below.*
+**Hint:** *Think about which HTTP Method you would use to update information and utilize the movies API documentation below.*
 
 ### Lab 4
 
 * Nice work! Turns out the movie you added isn't an actual movie! Use the provided API endpoint to *delete* your movie!
 
-**Hint:** *Utilize the movies API documentation below.*
+**Hint:** *Think about which HTTP Method you would use to delete information and utilize the movies API documentation below.*
 
 ---
 
