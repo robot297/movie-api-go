@@ -14,7 +14,7 @@ Here you will find all information to get started with building and deploying yo
 
 ### Lab 1
 
-Use the provided API endpoint to create a movie entry. ​Use your name for the 'Name' criteria.
+Use the provided API endpoint to create a movie entry. ​Use your name for the 'name' criteria in the body.
 
 **Hint:** *Utilize the movies API documentation below.*
 
@@ -22,7 +22,7 @@ Use the provided API endpoint to create a movie entry. ​Use your name for the 
 
 * Use the provided API endpoint to ensure your movie shows up in the movie catalog.
 
-**Hint:** *Utilize the movies API documentation below.*
+**Hint:** *Utilize the GET /movie/:name API documentation below.*
 
 ### Lab 3
 
@@ -54,12 +54,15 @@ Use the provided API endpoint to create a movie entry. ​Use your name for the 
 
 Returns information for *all* movies.
 
+#### Get One Movie by Name
 
 | Web Method | End Point |
 | ------- | ------ |
 | **GET** | /movie/:name |
 
 Returns information for *one* movie where 'name' is the name of the specific movie title.
+
+#### Create a Movie Entry
 
 | Web Method | End Point |
 | ------- | ------ |
@@ -77,6 +80,7 @@ Creates an entry for a movie.
 	"watched": false
 }
 ```
+#### Delete a Movie Entry by Name
 
 | Web Method | End Point |
 | ------- | ------ |
