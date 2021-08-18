@@ -6,6 +6,6 @@ Writing an web service API for movies.
 
 The service is hosted on [Heroku](http://heroku.com/) and the endpoint is located [here](https://summit-movie-api.herokuapp.com/).
 
-## API Documentation
+## Get Started
 
-**To be filled out later**
+[Lab Exercises](https://robot297.github.io/movie-api-go/)
